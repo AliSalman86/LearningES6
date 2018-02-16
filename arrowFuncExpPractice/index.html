@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>scratch book</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      window.onload = function() {
+        // .map
+        const race = '100m Dash';
+        const winners = ['Alex', 'Tuka', 'Jeff'];
+
+        const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+
+        console.table(win);
+
+        // .filter
+        const grades = [4.5, 3, 6, 8, 9.1, 7.3, 1.2, 5.7];
+        const passed = grades.filter(grade => grade >= 4.6);
+        console.log(passed);
+      }
+    </script>
+  </body>
+</html>
