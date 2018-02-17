@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>scratch book</title>
+    <title>Arrow function and this</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -13,7 +13,16 @@
       </div>
     </div>
     <script>
-      
+      const box = document.querySelector('.box');
+      box.addEventListener('click', function() {
+        this.classList.toggle('opening');
+        setTimeout(() => { this.classList.toggle('open')
+      }, 500);
+      });
+      // testing the same event listener with arrow functiona ---- and this would point to window object
+      // box.addEventListener('click', () => {
+      //   console.log(this);
+      // });
     </script>
   </body>
 </html>
