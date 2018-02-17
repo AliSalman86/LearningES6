@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Practicing</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      // default arguments Module 2-9
+
+      // The new way with ES6
+
+      function calculateBill(total, tax = 0.13, tip = 0.15) {
+        return total + (total*tax) + (total*tip);
+      }
+
+      const totalBill = calculateBill(100, undefined, 0.25);
+      console.log(totalBill);
+
+      // first function below would return the total bill - un-comment to check
+      // function calculateBill(total, tax, tip) {
+      //   return total + (total*tax) + (total*tip);
+      // }
+      //
+      // const totalBill = calculateBill(100, 0.13, 0.15);
+      // console.log(totalBill);
+
+      // function below would return NaN, since not all arguments required is passed to the function
+      // function calculateBill(total, tax, tip) {
+      //   return total + (total*tax) + (total*tip);
+      // }
+      //
+      // const totalBill = calculateBill(100);
+      // console.log(totalBill);
+
+      // long way to fix the unmentioned arguments issue
+      // function calculateBill(total, tax, tip) {
+      //   if (tax === undefined) {
+      //     tax = 0.13;
+      //   }
+      //   if (tip === undefined) {
+      //     tip = 0.15;
+      //   }
+      //   return total + (total*tax) + (total*tip);
+      // }
+      //
+      // const totalBill = calculateBill(100);
+      // console.log(totalBill);
+
+      // shorter way to fix the unmentioned arguments issue
+      // function calculateBill(total, tax, tip) {
+      //   tax = tax || 0.13;
+      //   tip = tip || 0.15;
+      //   return total + (total*tax) + (total*tip);
+      // }
+      //
+      // const totalBill = calculateBill(100);
+      // console.log(totalBill);
+    </script>
+  </body>
+</html>
