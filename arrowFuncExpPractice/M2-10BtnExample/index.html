@@ -16,11 +16,38 @@
     <!-- JS script -->
 
     <script>
+      // where you should NOT using arrow function:
+      // when you really need this object
+      // if function() replaced by => the function wouldn't work
       const button = document.querySelector('#button');
       button.addEventListener('click', function() {
         console.log(this);
         this.classList.toggle('on');
       });
+
+      // when you need a method to bind to an object.
+      // the below wouldn't working
+      // const person = {
+      //   points: 23,
+      //   score: () => {
+      //     this.points++
+      //     console.log(this);
+      //   }
+      // }
+      // person.score();
+      // console.log(person.points);
+
+      // below would work, when we use regular function
+      const person = {
+        points: 23,
+        score: function() {
+          console.log(this);
+          this.points++
+        }
+      }
+      person.score();
+      console.log(person.points);
+
     </script>
 
 
