@@ -48,8 +48,33 @@
       person.score();
       console.log(person.points);
 
+      // when we need to add a prototype method
+      class car {
+        constructor(make, color) {
+          this.make = make;
+          this.color = color;
+        }
+      }
+      const Tokalis1 = new car('fusion', 'white');
+      const Tokalis2 = new car('dodge', 'red');
+      // // it won't work this way
+      // car.prototype.summerize = () => { return `this car is ${this.make}, and it's color is ${this.color}` }
+      // it will work with regular function
+      car.prototype.summerize = function() { return `this car is ${this.make}, and it's color is ${this.color}` };
+
+      // when you need arguments object
+      // using the first arrow function won't work when passing argument object, using regular function() will work
+        // const orderChildren = () => {
+        const orderChildren = function() {
+        const children = Array.from(arguments);
+        console.log(children);
+        return children.map((child, i) => {
+          return `${child} was child #${i + 1}`;
+        });
+      }
+
+      orderChildren('Alex', 'Huss', 'Zin', 'Zaa');
+
     </script>
-
-
   </body>
 </html>
