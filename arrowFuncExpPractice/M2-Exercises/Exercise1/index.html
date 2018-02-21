@@ -37,9 +37,19 @@
   const filteredItems = lists.filter( list => list.innerHTML == 'Flexbox Video' );
   console.log(filteredItems);
   // map down to a list of time strings
-  
+  const timeMap = filteredItems.map(item => item.dataset.time);
+  console.log(timeMap);
   // map to an array of seconds
+  const timeSec = timeMap.map(function(item) {
+    let time = item.split(':');
+    let seconds = time[0] * 60 + time[1]*1;
+    // console.log(seconds);
+    return seconds;
+  })
+  console.log(timeSec);
   // reduce to get total
+  const total = timeSec.reduce((acc, curr) => acc + curr);
+  console.log(total);
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 </script>
 </body>
